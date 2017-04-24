@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "dependencies": {},
   "devDependencies": {
+    "assert": "^1.4.1",
     "grunt": "*",
     "grunt-contrib-jshint": "*",
     "grunt-contrib-watch": "*",
