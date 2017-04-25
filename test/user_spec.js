@@ -13,7 +13,8 @@ describe("User", function () {
     before(function () {
       user = new User({ 
         email: 'igor@gmail.com',
-        createdAt: new Date()
+        createdAt: new Date(),
+        signInCount: 0
       });
     });
 
@@ -27,7 +28,9 @@ describe("User", function () {
       // user.createdAt.should.be.defined;
       assert(user.createdAt);
     });
-    it("has a signInCount of 0");
+    it("has a signInCount of 0", function() {
+      assert.equal(user.signInCount, 0);
+    });
     it("has lastLogin");
     it("has currentLogin");
     it("has a sessionToken");

@@ -7,7 +7,8 @@ var User = function (args) {
   
   user.email = args.email;
   user.createdAt = args.createdAt || new Date();
-
+  user.signInCount = args.signInCount;
+  
   return user;
 };
 
