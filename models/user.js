@@ -1,5 +1,5 @@
 var assert = require('assert');
-
+var utility = require('../lib/utility');
 var User = function (args) {
   assert.ok(args.email, 'Email is required');
   
@@ -7,8 +7,12 @@ var User = function (args) {
   
   user.email = args.email;
   user.createdAt = args.createdAt || new Date();
+  user.status = args.status || "pending";
   user.signInCount = args.signInCount;
-  
+  user.lastLoginAt = args.lastLoginAt || new Date();
+  user.currentLoginAt = args.currentLoginAt || new Date();
+  user.authenticationToken = args.authenticationToken || utility.randomString(18);
+
   return user;
 };
 

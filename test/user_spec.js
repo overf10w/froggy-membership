@@ -22,8 +22,12 @@ describe("User", function () {
       // user.email.should.equal('igor@gmail.com');
       assert.equal(user.email, 'igor@gmail.com');
     });
-    it("has an authentication token");
-    it("has a pendign status");
+    it("has an authentication token", function () {
+      assert(user.authenticationToken);
+    });
+    it("has a pendign status", function () {
+      assert.equal(user.status, "pending");
+    });
     it("has a created date", function () {
       // user.createdAt.should.be.defined;
       assert(user.createdAt);
@@ -31,11 +35,11 @@ describe("User", function () {
     it("has a signInCount of 0", function() {
       assert.equal(user.signInCount, 0);
     });
-    it("has lastLogin");
-    it("has currentLogin");
-    it("has a sessionToken");
-    it("has a reminderToken");
-    it("has a reminder sent date");
-
+    it("has lastLogin", function () {
+      assert(user.lastLoginAt);
+    });
+    it("has currentLogin", function () {
+      assert(user.currentLoginAt);
+    });
   });
 });
